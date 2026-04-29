@@ -1,14 +1,20 @@
+body{
+    margin: 0;
+    font-family: arial;
+    display: flex;
+  }
+
 .sidebar{
     width: 160px;
     background: #3a6fd8;
     min-height: 100vh;
-    flex-shrink: 0;
   }
-  .sidebar-title{
+  .sidebar-titol{
     color: #fff;
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 600;
     padding: 16px 14px 10px;
+    margin-top: 5%;
     letter-spacing: 0.3px;
   }
   .sidebar nav a{
