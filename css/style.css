@@ -7,9 +7,8 @@ body{
 .sidebar{
     width: 160px;
     background: #3a6fd8;
-    min-height: 100vh;
-  }
-  .sidebar-titol{
+    min-height: 100vh;}
+.sidebar-titol{
     color: #fff;
     font-size: 20px;
     font-weight: 600;
@@ -17,10 +16,44 @@ body{
     margin-top: 5%;
     letter-spacing: 0.3px;
   }
-  .sidebar nav a{
+.sidebar nav a{
     display: block;
     color: #cfe0ff;
     font-size: 13px;
     padding: 10px 14px;
     text-decoration: none;
+  }
+main h1{
+    text-align: center;
+  }
+main{
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+  }
+.barra-accions{
+    display: flex;
+    justify-content: space-between;
+    height: 7%;
+    align-items: center;
+    padding: 10px 14px;
+    background: #ebecee;
+    color: #fff;
+    border-radius: 5px;
+  }
+.btn-blau{
+    background: #3a6fd8;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+.btn-blau a{
+    text-decoration: none;
+    color: #fff;
+  }
+.btn-blau:hover{
+    background: #2a4f8d;
   }
