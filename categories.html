@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gestió de Categories</title>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-titol"><b>Menú</b></div>
+        <nav>
+            <a href="index.html"><b>Llistat d'Activitats</b></a>
+            <a href="crear-tasca.html"><b>Crear Tasca</b></a>
+            <a href="categories.html"><b>Gestió de Categories</b></a>
+        </nav>
+    </aside>
+    <main>
+        <h1>Gestió de Categories</h1>
+        <div class="formulari">
+            <div class="camp">
+                <label for="input-nom-cat">Nova Categoria:</label>
+                <input type="text" id="input-nom-cat" placeholder="Nom de la categoria">
+            </div>
+            <div class="camp">
+                <label for="input-color-cat">Color de la Categoria:</label>
+                <input type="color" id="input-color-cat" value="#000000">
+            </div>
+            <button class="btn-blau" id="btn-afegir">Afegir Categoria</button>
+        </div>
+
+        <div class="llista-categories-contenidor">
+            <div id="llista-categories"></div>
+        </div>
+    </main>
+</body>
+</html>
