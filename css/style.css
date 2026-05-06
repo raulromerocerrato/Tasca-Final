@@ -57,3 +57,36 @@ main{
 .btn-blau:hover{
     background: #2a4f8d;
   }
+.formulari-tasca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #b6b8bc;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+.formulari-tasca form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+.formulari-tasca label{
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+.formulari-tasca input, .formulari-tasca textarea{
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+.formulari-tasca button{
+    background: #3a6fd8;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+   }
