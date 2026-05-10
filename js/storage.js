@@ -26,3 +26,12 @@ export function eliminarTasca(id) {
   const tasques = getTasques().filter(t => t.id !== id);
   saveTasques(tasques);
 }
+
+export function marcarRealitzada(id, estat) {
+  const tasques = getTasques();
+  const t = tasques.find(t => t.id === id);
+  if (t) {
+    t.realitzada = estat;
+    saveTasques(tasques);
+  }
+}
