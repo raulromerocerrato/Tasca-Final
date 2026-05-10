@@ -13,3 +13,10 @@ export function getTasques() {
   if (!resposta) return [];
   return JSON.parse(resposta).map(t => new Tasca(t));
 }
+
+/**
+ * @param {Tasca[]} tasques
+ */
+export function saveTasques(tasques) {
+  localStorage.setItem(KEYS.TASQUES, JSON.stringify(tasques));
+}
