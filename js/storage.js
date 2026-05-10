@@ -5,18 +5,19 @@ const KEYS = {
   CATEGORIES: 'categories',
 };
 
-/**
- * @returns {Tasca[]}
- */
 export function getTasques() {
   const resposta = localStorage.getItem(KEYS.TASQUES);
   if (!resposta) return [];
   return JSON.parse(resposta).map(t => new Tasca(t));
 }
 
-/**
- * @param {Tasca[]} tasques
- */
 export function saveTasques(tasques) {
   localStorage.setItem(KEYS.TASQUES, JSON.stringify(tasques));
+}
+
+export function afegirTasca(tasca) {
+  const tasques = getTasques();
+  if (tasques.find(t => t.id === tasca.id)) return;
+  tasques.push(tasca);
+  saveTasques(tasques);
 }
