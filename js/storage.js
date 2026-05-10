@@ -21,3 +21,8 @@ export function afegirTasca(tasca) {
   tasques.push(tasca);
   saveTasques(tasques);
 }
+
+export function eliminarTasca(id) {
+  const tasques = getTasques().filter(t => t.id !== id);
+  saveTasques(tasques);
+}
