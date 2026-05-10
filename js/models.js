@@ -6,8 +6,7 @@ export class Categoria {
 }
 
 export class Tasca {
-  constructor({ id, titol, descripcio, data, categoria, prioritat, realitzada = false }) {
-    this.id = id;
+  constructor({titol, descripcio, data, categoria, prioritat, realitzada = false }) {
     this.titol = titol;
     this.descripcio = descripcio;
     this.data = data;
