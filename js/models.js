@@ -6,7 +6,8 @@ export class Categoria {
 }
 
 export class Tasca {
-  constructor({titol, descripcio, data, categoria, prioritat, realitzada = false }) {
+  constructor({id, titol, descripcio, data, categoria, prioritat, realitzada = false }) {
+    this.id = id || `task-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
     this.titol = titol;
     this.descripcio = descripcio;
     this.data = data;
