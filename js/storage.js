@@ -43,3 +43,8 @@ export function getTasquesPendents() {
 export function getTasquesAcabades() {
   return getTasques().filter(t => t.realitzada);
 }
+
+export function getCategories() {
+  const resposta = localStorage.getItem(KEYS.CATEGORIES);
+  return JSON.parse(resposta).map(c => new Categoria(c.nom, c.color));
+}
