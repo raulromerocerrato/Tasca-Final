@@ -57,3 +57,8 @@ export function afegirCategoria(categoria) {
   saveCategories(categories);
   return true;
 }
+
+export function eliminarCategoria(nom) {
+  const categories = getCategories().filter(c => c.nom !== nom);
+  saveCategories(categories);
+}
