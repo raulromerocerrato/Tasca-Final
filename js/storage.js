@@ -39,3 +39,7 @@ export function marcarRealitzada(id, estat) {
 export function getTasquesPendents() {
   return getTasques().filter(t => !t.realitzada);
 }
+
+export function getTasquesAcabades() {
+  return getTasques().filter(t => t.realitzada);
+}
