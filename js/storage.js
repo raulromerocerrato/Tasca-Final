@@ -35,3 +35,7 @@ export function marcarRealitzada(id, estat) {
     saveTasques(tasques);
   }
 }
+
+export function getTasquesPendents() {
+  return getTasques().filter(t => !t.realitzada);
+}
