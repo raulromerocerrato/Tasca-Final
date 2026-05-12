@@ -48,3 +48,12 @@ export function getCategories() {
   const resposta = localStorage.getItem(KEYS.CATEGORIES);
   return JSON.parse(resposta).map(c => new Categoria(c.nom, c.color));
 }
+
+export function afegirCategoria(categoria) {
+  const categories = getCategories();
+  const duplicat = categories.find(c => c.nom.toLowerCase() === categoria.nom.toLowerCase());
+  if (duplicat) return false;
+  categories.push(categoria);
+  saveCategories(categories);
+  return true;
+}
