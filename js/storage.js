@@ -62,3 +62,7 @@ export function eliminarCategoria(nom) {
   const categories = getCategories().filter(c => c.nom !== nom);
   saveCategories(categories);
 }
+
+export function getCategoriaByNom(nom) {
+  return getCategories().find(c => c.nom === nom);
+}
