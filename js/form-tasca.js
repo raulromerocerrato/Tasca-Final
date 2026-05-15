@@ -7,7 +7,6 @@ const inputDescripcio = document.getElementById('descripcio');
 const inputData = document.getElementById('data');
 const selectCategoria = document.getElementById('categoria');
 const selectPrioritat = document.getElementById('prioritat');
-const colorPreview = document.getElementById('cat-color-preview');
 const btnSubmit = form?.querySelector('button[type="submit"]');
 
 function carregarCategories(){
