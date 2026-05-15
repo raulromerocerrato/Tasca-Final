@@ -22,7 +22,7 @@ function carregarCategories(){
 }
 carregarCategories();
 
-function validarFormulari() {
+function validarFormulari(){
   const errors = [];
   if (!inputTitol.value.trim()) errors.push('El títol és obligatori');
   if (!inputDescripcio.value.trim()) errors.push('La descripció és obligatòria');
@@ -30,4 +30,17 @@ function validarFormulari() {
   if (!selectCategoria.value) errors.push('Selecciona una categoria');
   if (!selectPrioritat.value) errors.push('Selecciona una prioritat');
   return {valid: errors.length === 0, errors};
+}
+
+function mostrarError(missatge){
+  let errorForm = document.getElementById('form-error');
+  if (!errorForm){
+    errorForm = document.createElement('p');
+    errorForm.id = 'form-error';
+    errorForm.className = 'form-error';
+    form.prepend(errorForm);
+  }
+  errorForm.textContent = missatge;
+  clearTimeout(errorForm._t);
+  errorForm._t = setTimeout(() => {errorForm.textContent = '';}, 4000);
 }
