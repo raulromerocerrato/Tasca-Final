@@ -21,3 +21,13 @@ function carregarCategories(){
   });
 }
 carregarCategories();
+
+function validarFormulari() {
+  const errors = [];
+  if (!inputTitol.value.trim()) errors.push('El títol és obligatori');
+  if (!inputDescripcio.value.trim()) errors.push('La descripció és obligatòria');
+  if (!inputData.value) errors.push('La data és obligatòria');
+  if (!selectCategoria.value) errors.push('Selecciona una categoria');
+  if (!selectPrioritat.value) errors.push('Selecciona una prioritat');
+  return {valid: errors.length === 0, errors};
+}
