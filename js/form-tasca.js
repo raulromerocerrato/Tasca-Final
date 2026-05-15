@@ -44,3 +44,10 @@ function mostrarError(missatge){
   clearTimeout(errorForm._t);
   errorForm._t = setTimeout(() => {errorForm.textContent = '';}, 4000);
 }
+
+[inputTitol, inputDescripcio, inputData, selectCategoria, selectPrioritat].forEach(errorForm =>{
+  errorForm?.addEventListener('input', () =>{
+    const error = document.getElementById('form-error');
+    if(error) error.textContent = '';
+  });
+});
