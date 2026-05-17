@@ -10,3 +10,10 @@ function agruparPerMes(tasques) {
   const valors  = labels.map(m => comptes[m]);
   return { labels, valors };
 }
+
+function formatMesLabel(mes) {
+  if (mes === 'Desconegut') return mes;
+  const [y, m] = mes.split('-');
+  const data   = new Date(+y, +m - 1, 1);
+  return data.toLocaleDateString('ca-ES', { month: 'short', year: 'numeric' });
+}
