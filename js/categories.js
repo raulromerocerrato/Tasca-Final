@@ -76,3 +76,5 @@ function mostrarToast(missatge, tipus = 'ok') {
   clearTimeout(toast._t);
   toast._t = setTimeout(() => toast.classList.remove('visible'), 3500);
 }
+
+renderCategories();
