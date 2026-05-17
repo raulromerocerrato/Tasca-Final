@@ -1,15 +1,7 @@
 import {getCategories, afegirCategoria, eliminarCategoria} from './storage.js';
 import { Categoria } from './models.js';
 
-function prioritatClass(prioritat){
-  const mapa = {
-    'Alta': 'prioritat-alta',
-    'Mitjana': 'prioritat-mitjana',
-    'Baixa': 'prioritat-baixa',
-  };
-  return mapa[prioritat] || '';
-}
-
-function prioritatIcon(prioritat){
-  return { 'Alta': '🔴', 'Mitjana': '🟡', 'Baixa': '🟢' }[prioritat] || '⚪';
-}
+const inputNom = document.getElementById('input-nom-cat');
+const inputColor = document.getElementById('input-color-cat');
+const botoAfegir = document.getElementById('btn-afegir');
+const llistaCat = document.getElementById('llista-categories');
