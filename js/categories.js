@@ -37,3 +37,29 @@ function renderCategoriaItem(categoria) {
 
   llistaCat.appendChild(item);
 }
+
+botoAfegir?.addEventListener('click', afegirCategoriaHandler);
+
+function afegirCategoriaHandler() {
+  const nom = inputNom.value.trim();
+  const color = inputColor.value;
+
+  if (!nom) {
+    mostrarToast('Introdueix un nom per a la categoria.', 'error');
+    inputNom.focus();
+    return;
+  }
+
+  const ok = afegirCategoria(new Categoria(nom, color));
+  if (!ok) {
+    mostrarToast(`La categoria "${nom}" ja existeix.`, 'error');
+    inputNom.select();
+    return;
+  }
+
+  inputNom.value = '';
+  inputColor.value = '#3a6fd8';
+  renderCategories();
+  mostrarToast(`Categoria "${nom}" afegida correctament `, 'ok');
+  inputNom.focus();
+}
