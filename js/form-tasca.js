@@ -7,7 +7,7 @@ const inputDescripcio = document.getElementById('descripcio');
 const inputData = document.getElementById('data');
 const selectCategoria = document.getElementById('categoria');
 const selectPrioritat = document.getElementById('prioritat');
-const btnSubmit = form?.querySelector('button[type="submit"]');
+const botoSubmit = form?.querySelector('button[type="submit"]');
 
 function carregarCategories(){
   const cats = getCategories();
@@ -50,4 +50,38 @@ function mostrarError(missatge){
     const error = document.getElementById('form-error');
     if(error) error.textContent = '';
   });
+});
+
+form?.addEventListener('submit', e => {
+  e.preventDefault();
+
+  if (botoSubmit.disabled) return;
+
+  const { valid, errors } = validarFormulari();
+  if (!valid) {
+    mostrarError(errors[0]);
+    return;
+  }
+
+  const categoriaObj = getCategoriaByNom(selectCategoria.value);
+
+  const tasca = new Tasca({
+    titol: inputTitol.value.trim(),
+    descripcio: inputDescripcio.value.trim(),
+    data: inputData.value,
+    categoria: categoriaObj
+      ? { nom: categoriaObj.nom, color: categoriaObj.color }
+      : { nom: selectCategoria.value, color: '#999' },
+    prioritat: selectPrioritat.value,
+  });
+
+  afegirTasca(tasca);
+
+  botoSubmit.textContent = 'Tasca creada!';
+  botoSubmit.disabled = true;
+  botoSubmit.style.background = '#27ae60';
+
+  setTimeout(() => {
+    window.location.href = 'index.html';
+  }, 900);
 });
