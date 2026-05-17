@@ -63,3 +63,16 @@ function afegirCategoriaHandler() {
   mostrarToast(`Categoria "${nom}" afegida correctament `, 'ok');
   inputNom.focus();
 }
+
+function mostrarToast(missatge, tipus = 'ok') {
+  let toast = document.getElementById('toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = missatge;
+  toast.className   = `toast toast-${tipus} visible`;
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.remove('visible'), 3500);
+}
