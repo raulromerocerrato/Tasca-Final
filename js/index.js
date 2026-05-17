@@ -19,3 +19,10 @@ function prioritatClass(prioritat){
 function prioritatIcon(prioritat){
   return { 'Alta': '🔴', 'Mitjana': '🟡', 'Baixa': '🟢' }[prioritat] || '⚪';
 }
+
+function formatData(date){
+  if (!date) return '—';
+  const [y, m, d] = date.split('-');
+  const data = new Date(+y, +m - 1, +d);
+  return data.toLocaleDateString('ca-ES', { day: 'numeric', month: 'short', year: 'numeric' });
+}
